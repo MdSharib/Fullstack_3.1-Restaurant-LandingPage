@@ -1,15 +1,58 @@
 const itemsSection = document.getElementById("items-section");
 
 let items = [];
+let order = {};
 
 const  getMenu = async() => {
     const res = await fetch("https://raw.githubusercontent.com/saksham-accio/f2_contest_3/main/food.json");
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     items =data;
     displayItems();
-   
+    await TakeOrder();  
+    console.log("order items are: " ,order);
+    const prepStatus = await orderPrep();
+    console.log("order preparation status is: " ,prepStatus);
+    const payStatus = await payOrder();
+    console.log("order payment status is: " ,payStatus);
+    thankyouFnc();
+
 }   
+
+
+function delay(timer) {
+    return new Promise(resolve => setTimeout(resolve, timer));
+}
+
+
+// second function
+const TakeOrder = async() => {
+    await delay(2500);
+    let obj = {
+                item1 : items[0]["name"],
+                item2: items[1]["name"],
+                item3: items[2]["name"],
+    }
+    order = obj;
+   
+}
+
+// third function
+const orderPrep = async() => {
+    await delay(1500);
+    return {order_status:true, paid:false};
+}
+
+// fourth function
+const payOrder = async() => {
+    await delay(1000);
+    return {order_status:true, paid:true}
+}
+
+// fifth function
+const thankyouFnc = () => {
+    alert("Thankyou for eating with us today!");
+}
 
 
 const displayItems = () => {
