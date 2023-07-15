@@ -21,6 +21,7 @@ body {
     background-color: #0C0E10;
     width: 20%;
     color: white;
+    overflow: auto;
 }
 
 
@@ -115,5 +116,31 @@ main #main-banner{
 }
 
 
+/* item content */
 
+#item-content #items-section{
+    
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+#items-section .item-card{
+    width: 97%;
+    border-radius: 7px;
+    background-color: #191D20;
+}
+
+.card-img{
+    width: 96%;
+    margin: 7px;
+}
+.card-img img{
+    width: 100%;
+}
+
+.card-description{
+    display: flex;
+    justify-content: space-between;
+    margin: 7px;
+}
 
