@@ -64,7 +64,7 @@ const payOrder = async () => {
 
 // fifth function
 const thankyouFnc = () => {
-  alert("Thankyou for eating with us today!");
+  alert("Thank you for eating with us today!");
 };
 
 const displayItems = () => {
@@ -76,11 +76,11 @@ const displayItems = () => {
         </div>
         <div class="card-description">
             <div class="card-info">
-                <div class="card-info-title">${val["name"]}</div>
+                <div class="card-info-title"><b>${val["name"]}</b></div>
                 <div class="card-info-price">$${val["price"]}/-</div>
             </div>
             <div class="addToCart-btn">
-                <button> +</button>
+                <button><img src="./resources/plus.png"></button>
             </div>
         </div>
     </div>`);

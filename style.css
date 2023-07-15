@@ -96,7 +96,7 @@ a{
     background-color: #111315;
     width: 80%;
     color: white;
-    margin-left: 21%;
+    margin-left: 20%;
 
 }
 
@@ -109,11 +109,19 @@ a{
     height: 65px;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    width: 81%;
+    z-index: 1000;
+    background-color: #191D20;
+}
+#main-content main{
+    margin-top: 67px;
 }
 
 header #search-div{
     width: 75%;
-    height: 31px;
+    height: 35px;
+    margin-left: 6px;
 }
 header #search-div input{
     width: 98%;
@@ -163,6 +171,12 @@ main #main-banner{
 
 
 /* item content */
+#main-content-heading{
+    font-size: 45px;
+    border-bottom: 1px solid white;
+    margin: 0px 129px 6px 0px;
+}
+
 
 #item-content #items-section{
     
@@ -188,5 +202,14 @@ main #main-banner{
     display: flex;
     justify-content: space-between;
     margin: 7px;
+}
+
+.addToCart-btn button{
+    background-color: #090a0b;
+    border: none;
+    width: 80%;
+}
+.addToCart-btn button img{
+    width: 100%;
 }
 
