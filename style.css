@@ -9,6 +9,11 @@ body {
 }
 
 
+button{
+    cursor: pointer;
+}
+
+
 
 #container{
     display: flex;
@@ -22,7 +27,23 @@ body {
     background-color: #0C0E10;
     width: 20%;
     color: white;
-    overflow: auto;
+    overflow: hidden;
+    position: fixed;
+    height: 100vh;
+    
+}
+
+#menu-text{
+    font-size: 22px;
+}
+
+#slogan-text{
+    color: #FF2424;
+}
+
+a{
+    text-decoration-style: nones;
+    color: white;
 }
 
 
@@ -32,15 +53,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
+}
+ 
+.avatar .avatar-img{
+    width: 70%;
 }
 
-.avatar .avatar-img{
+.avatar-img img{
     width: 100%;
 }
 
 #side-links{
-    margin: 10px 0px;
+    margin: 25px 0px;
 }
+#side-links ol li{
+    margin: 5px 0px;
+}
+#side-aboutus ol li{
+    margin: 5px 0px;
+}
+
+
 
 #side-links #quick-link{
     display: flex;
@@ -62,6 +96,7 @@ body {
     background-color: #111315;
     width: 80%;
     color: white;
+    margin-left: 21%;
 
 }
 
@@ -102,6 +137,16 @@ header #header-btn{
     color: white;
     border: none;
 }
+#header-btn #header-profile-img {
+    border-radius: 50%;
+    width: 13%;
+}
+#header-btn #header-profile-img img{
+    object-fit: cover;
+    width: 112%;
+}
+
+
 
 /* banner */
 
