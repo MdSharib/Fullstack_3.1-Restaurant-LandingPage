@@ -18,19 +18,33 @@ const getMenu = async () => {
 
     items = data;
     displayItems();
-    
+
     await TakeOrder();
+    const orderText = JSON.stringify(order);
+    createToast(
+      `Check console. After 2500 milliseconds- order items are: ${orderText}`
+    );
     console.log("order items are: ", order);
 
     const prepStatus = await orderPrep();
+    const prepStatusText = JSON.stringify(prepStatus);
+    createToast(
+      `After 1500 milliseconds- order preparation status is: ${prepStatusText}`
+    );
     console.log("order preparation status is: ", prepStatus);
 
     const payStatus = await payOrder();
+    const payStatusText = JSON.stringify(payStatus);
+
+    createToast(
+      `After 1000 milliseconds- order payment status is: ${payStatusText}`
+    );
+
     console.log("order payment status is: ", payStatus);
 
     thankyouFnc();
   } catch (err) {
-    itemsSection.innerHTML = "Oops! something went wrong!!"
+    itemsSection.innerHTML = "Oops! something went wrong!!";
     console.log(err.message);
   }
 };
@@ -91,3 +105,28 @@ const displayItems = () => {
 
 // first function
 getMenu();
+
+// toast notification
+
+const notifications = document.querySelector(".notifications");
+
+const createToast = (text) => {
+  const timer = 3000;
+  const toast = document.createElement("li");
+  toast.className = `toast success`;
+
+  toast.innerHTML = `<div class="column">
+												<i class="fa-solid fa-circle-check"></i>
+												<span style="color: black">${text}</span>
+										</div>
+										<i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
+  notifications.appendChild(toast);
+
+  toast.timeoutId = setTimeout(() => removeToast(toast), timer);
+};
+
+const removeToast = (toast) => {
+  toast.classList.add("hide");
+  if (toast.timeoutId) clearTimeout(toast.timeoutId);
+  setTimeout(() => toast.remove(), 500);
+};
