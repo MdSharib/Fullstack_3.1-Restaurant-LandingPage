@@ -107,7 +107,6 @@ const displayItems = () => {
 getMenu();
 
 // toast notification
-
 const notifications = document.querySelector(".notifications");
 
 const createToast = (text) => {
